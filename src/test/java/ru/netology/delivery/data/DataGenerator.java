@@ -11,11 +11,11 @@ public class DataGenerator {
     private DataGenerator() {
     }
 
-    static Faker faker = new Faker(new Locale("ru"));
+    static Faker faker = new Faker(new Locale("ru_RU"));
 
 
-    public static String generateDate(int cDay) {
-        return LocalDate.now().plusDays(cDay).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+    public static String generateDate(int day) {
+        return LocalDate.now().plusDays(day).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
 
     public static String generateCity(String locale) {
@@ -27,7 +27,7 @@ public class DataGenerator {
     }
 
     public static String generatePhone(String locale) {
-        return faker.phoneNumber().cellPhone();
+        return faker.phoneNumber().phoneNumber();
     }
 
     public static class Registration {
@@ -35,7 +35,7 @@ public class DataGenerator {
         }
 
         public static UserInfo generateUser(String locale) {
-            return new UserInfo(generateCity("ru"), generateName("ru"), generatePhone("ru"));
+            return new UserInfo(generateCity("ru_RU"), generateName("ru_RU"), generatePhone("ru_RU"));
         }
     }
 
