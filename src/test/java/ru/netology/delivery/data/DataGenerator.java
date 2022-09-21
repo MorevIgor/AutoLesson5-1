@@ -15,6 +15,7 @@ public class DataGenerator {
     }
 
     static Faker faker = new Faker(new Locale("ru_RU"));
+
     public static String cities() {
         List<String> cities = new ArrayList<>();
         cities.add("Москва");
@@ -109,11 +110,12 @@ public class DataGenerator {
 
         return citiesOut;
     }
+
     public static String generateDate(int day) {
         return LocalDate.now().plusDays(day).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
 
-    public static String  generateCity() {
+    public static String generateCity() {
         return cities();
     }
 

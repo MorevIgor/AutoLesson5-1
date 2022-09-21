@@ -36,12 +36,6 @@ class DeliveryTest {
         $x("//*[@data-test-id=\"name\"]//self::input").setValue(validUser.getName());
         $x("//*[@data-test-id=\"phone\"]//self::input").sendKeys(Keys.LEFT_CONTROL + "A" + Keys.DELETE);
         $x("//*[@data-test-id=\"phone\"]//self::input").setValue(validUser.getPhone());
-//        $x("//*[@class=\"button__text\"]").click();
-//        String invalidCity = $x("//*[@data-test-id=\"city\"]//child::span[@class=\"input__sub\"]").getText();
-//        String invalidC = "Доставка в выбранный город недоступна";
-//        if (invalidCity.equals(invalidC)) {              //перегенерация данных при не валид городе
-//            shouldSuccessfulPlanAndReplanMeeting();
-//        }
         $x("//*[@data-test-id=\"agreement\"]").click();
         $x("//*[@class=\"button__text\"]").click();
         String message = $x("//*[@data-test-id=\"success-notification\"]").shouldBe(visible, Duration.ofSeconds(15)).getText();
