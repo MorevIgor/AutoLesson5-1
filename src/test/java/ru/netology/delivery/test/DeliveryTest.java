@@ -6,13 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 import ru.netology.delivery.data.DataGenerator;
 
-import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.exactText;
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$x;
-import static com.codeborne.selenide.Selenide.open;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static com.codeborne.selenide.Selenide.*;
+
 
 class DeliveryTest {
 
@@ -42,7 +39,7 @@ class DeliveryTest {
         $x("//*[@data-test-id=\"success-notification\"]").shouldHave(exactText("Успешно!\n" + "Встреча успешно запланирована на " + firstMeetingDate));
         $x("//*[@data-test-id=\"date\"]//self::input").doubleClick().sendKeys(Keys.DELETE, secondMeetingDate);
         $x("//*[@class=\"button__text\"]").click();
-        $x("//*[@data-test-id=\"replan-notification\"]").click();
+        $("[data-test-id=\"replan-notification\"] button").click();
         $x("//*[@data-test-id=\"success-notification\"]").shouldHave(exactText("Успешно!\n" + "Встреча успешно запланирована на " + secondMeetingDate));
     }
 }

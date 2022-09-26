@@ -101,7 +101,7 @@ public class DataGenerator {
         cities.add("Нарьян-Мар");
         cities.add("Ханты-Мансийск");
         cities.add("Анадырь");
-        cities.add("Садехард");
+        cities.add("Салехард");
 
         Random r = new Random();
         int x = r.nextInt(87) + 1;
